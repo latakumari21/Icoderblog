@@ -181,7 +181,7 @@
         <div class="row mb-2">
             <div class="col-md-6">
                 <div
-                    class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative blog-card">
                     <div class="col p-4 d-flex flex-column position-static"> <strong
                             class="d-inline-block mb-2 text-primary-emphasis">AI</strong>
                         <h3 class="mb-0">Understand the AI tools transforming the world</h3>
@@ -201,7 +201,7 @@
             </div>
             <div class="col-md-6">
                 <div
-                    class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative blog-card">
                     <div class="col p-4 d-flex flex-column position-static"> <strong
                             class="d-inline-block mb-2 text-success-emphasis">10-Most In demand Courses to Elevate Your AI Skills</strong>
                         <h3 class="mb-0">What does an AI engineer do</h3>
@@ -222,7 +222,7 @@
             <div class="row mb-2">
             <div class="col-md-6">
                 <div
-                    class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative blog-card">
                     <div class="col p-4 d-flex flex-column position-static"> <strong
                             class="d-inline-block mb-2 text-primary-emphasis">Finding a Job</strong>
                         <h3 class="mb-0">7 Popular Jobs in AI and Machine Learning</h3>
@@ -242,7 +242,7 @@
             </div>
             <div class="col-md-6">
                 <div
-                    class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative blog-card">
                     <div class="col p-4 d-flex flex-column position-static"> <strong
                             class="d-inline-block mb-2 text-success-emphasis">Career advice</strong>
                         <h3 class="mb-0">6 Benefits of Learning Technical Skills — No Matter What Your Job Title Is</h3>
@@ -260,37 +260,31 @@
                     </div>
                 </div>
             </div>
-        </div>
+    </div>
     <script>
-function searchBlogs(event) {
-    event.preventDefault();
+        document.addEventListener("DOMContentLoaded", () => {
+            function searchBlogs(event) {
+                event.preventDefault();
+                const searchValue = document.getElementById("searchInput").value.toLowerCase();
+                const blogCards = document.getElementsByClassName("blog-card");
 
-    const searchValue = document
-        .getElementById("searchInput")
-        .value
-        .toLowerCase();
+                for (let card of blogCards) {
+                    const text = card.innerText.toLowerCase();
+                    card.style.display = text.includes(searchValue) ? "" : "none";
+                }
+            }
 
-    const blogCards = document.getElementsByClassName("blog-card");
-
-    for (let card of blogCards) {
-        const text = card.innerText.toLowerCase();
-
-        if (text.includes(searchValue)) {
-            card.style.display = "";
-        } else {
-            card.style.display = "none";
-        }
-    }
-}
-</script>
-        <footer class="container"> <p class="float-end"><a href="#">Back to top</a></p> <p>© 2025–2026 Footer, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a></p> </footer>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+            const searchForm = document.querySelector('form[role="search"]');
+            searchForm.addEventListener('submit', searchBlogs);
+        });
+    </script>
+    <footer class="container"> <p class="float-end"><a href="#">Back to top</a></p> <p>© 2025–2026 Footer, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a></p> </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
 </body>
-
-
 </html>
+
 
 
 
